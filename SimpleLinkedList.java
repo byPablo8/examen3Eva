@@ -1,4 +1,4 @@
-package Examen3Eva;
+package examen3Eva;
 
 public class SimpleLinkedList {
     private Node first;

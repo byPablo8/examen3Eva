@@ -1,4 +1,4 @@
-package Examen3Eva;
+package examen3Eva;
 
 
 import java.util.Scanner;
