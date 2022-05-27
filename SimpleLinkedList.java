@@ -1,11 +1,15 @@
 package examen3Eva;
 
-import clubSocios.NodeSocios;
 
+/**
+ * PRE:
+ * POST: Creo la Simple linked list con metodos para añadir y eliminar.
+ */
 public class SimpleLinkedList {
     private Node first;
     private int size;
 
+    //creo los constructores necesarios para el funcionamiento
     public SimpleLinkedList() {
         this.first = null;
         this.size = 0;
@@ -16,6 +20,7 @@ public class SimpleLinkedList {
         this.size = 1;
     }
 
+    //creo los getter y setters
     public Node getFirst() {
         return first;
     }
@@ -32,6 +37,10 @@ public class SimpleLinkedList {
         this.size = size;
     }
 
+    /**
+     * PRE:
+     * POST: Este metodo permite añadir ala lista
+     */
     public boolean add(Node node) {
         try {
             if (size == 0) {
@@ -51,6 +60,10 @@ public class SimpleLinkedList {
         }
     }
 
+    /**
+     * PRE:
+     * POST: Este metodo permite añadir ala lista
+     */
     public boolean add(int position, Node node) {
         if (position == 0) {
             node.setNext(first);
@@ -69,6 +82,10 @@ public class SimpleLinkedList {
         return true;
     }
 
+    /**
+     * PRE:
+     * POST: Este metodo permite mostrar la listaEnlazada
+     */
     public void show() {
         Node p = first;
         for (int i = 0; i < size; i++) {
@@ -77,7 +94,11 @@ public class SimpleLinkedList {
         }
     }
 
-    public boolean eliminarMayor(int index){
+    /**
+     * PRE:
+     * POST: Este metodo permite eliminar contenido de la listaEnlazada
+     */
+    public boolean eliminar(int index) {
         try {
             if (index == 0) {
                 first = first.getNext();
