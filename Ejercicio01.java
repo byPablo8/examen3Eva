@@ -11,12 +11,22 @@ import java.util.Scanner;
  * empiezan o terminan con dicha letra, junto a la línea en la que se encuentran.
  */
 public class Ejercicio01 {
-    public static void algoritmo(File file, String a){
+    public static void algoritmo(File file, String a) {
         try {
             Scanner f = new Scanner(file);
-
             while (f.hasNextLine()) {
+                String linea = f.nextLine();
+                String[] tabla = linea.split(" ");
+                for (int i = 0; i < tabla.length; i++) {
+                    tabla[i].replaceAll(",", "").replaceAll("\\.", "");
+                    if (tabla[i].contains("a")) {
 
+                    }
+                }
+
+                for (int i = 0; i < tabla.length; i++) {
+                    System.out.println(tabla[i]);
+                }
             }
         } catch (Exception ignored) {
 
@@ -27,5 +37,6 @@ public class Ejercicio01 {
         File file;
         file = new File("C:\\Users\\PABLO\\OneDrive\\Escritorio\\HablanosDelDon.txt");
         String a = "a";
+        algoritmo(file, a);
     }
 }

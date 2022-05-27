@@ -1,5 +1,7 @@
 package examen3Eva;
 
+import clubSocios.NodeSocios;
+
 public class SimpleLinkedList {
     private Node first;
     private int size;
@@ -75,7 +77,32 @@ public class SimpleLinkedList {
         }
     }
 
-    public boolean eliminarMayor(){
-        return true;
+    public boolean eliminarMayor(int index){
+        try {
+            if (index == 0) {
+                first = first.getNext();
+                size--;
+                return true;
+            } else if (index == size - 1) {
+                Node p = first;
+                for (int i = 1; i <= index - 1; i++) {
+                    p = p.getNext();
+                }
+                p.setNext(null);
+                size--;
+                return true;
+            } else {
+                Node p = first;
+                for (int i = 1; i <= index - 1; i++) {
+                    p = p.getNext();
+                }
+                p.setNext(p.getNext().getNext());
+                size--;
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return false;
+        }
     }
 }

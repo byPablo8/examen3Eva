@@ -20,9 +20,7 @@ public class Ejercicio04 {
 
     /**
      * PRE:---
-     * POST: Este metodo realizara la tabla de multiplicar recursivamente hasta 100
-     * @param numero
-     * @param cien
+     * POST: Este metodo realizara la tabla de multiplicar recursivamente hasta 100.
      */
     public static void tablaMultiplicar(int numero, int cien) {
         if (cien > 1) {
