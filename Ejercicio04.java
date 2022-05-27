@@ -20,11 +20,12 @@ public class Ejercicio04 {
 
     /**
      * PRE:---
-     * POST: Este metodo realizara la tabla de multiplicar recursivamente hasta 100.
+     * POST: Este metodo realizara la tabla de multiplicar del numero introducido por el usuario recursivamente
+     * hasta 100 y solo los multiplicadores pares.
      */
     public static void tablaMultiplicar(int numero, int cien) {
-        if (cien > 1) {
-            tablaMultiplicar(numero, cien - 1);
+        if (cien > 0) { //mayor que 0 para que multiplique el 0
+            tablaMultiplicar(numero, cien - 2); //Resto dos para que haga los pares solo.
         }
         System.out.println("\t" + numero + " x " + cien + " = " + (numero * cien));
     }

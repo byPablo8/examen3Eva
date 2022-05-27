@@ -8,9 +8,9 @@ import java.sql.Statement;
 public class MysqConnection {
     private Connection connection = null;
     private Statement statement = null;
-    private final PreparedStatement preparedStatement = null;
+    private PreparedStatement preparedStatement = null;
     private ResultSet resultSet = null;
-    final private String host = "localhost:3306/juego";
+    final private String host = "localhost:3306/registro";
     final private String usuario = "root";
     final private String contraseña = "";
 
@@ -28,5 +28,14 @@ public class MysqConnection {
         } catch (Exception e) {
             throw e;
         }
+    }
+
+    /**
+     * PRE:---
+     * POST: Este metodo añadir, añade la letra, la palabra y la linea donde aparece ala base de datos.
+     */
+    public void añadir(String letra, String palabra, int contadorLineas) throws Exception {
+        preparedStatement = connection.prepareStatement("insert into registro(" + letra + "," + palabra + "," + contadorLineas
+                + ") " + "values (?,?,?)");
     }
 }

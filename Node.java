@@ -1,5 +1,9 @@
 package examen3Eva;
 
+/**
+ * PRE:
+* POST:
+ */
 public class Node {
     private int content;
     private Node next;

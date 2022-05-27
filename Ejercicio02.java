@@ -19,20 +19,21 @@ public class Ejercicio02 {
      * PRE:---
      * POST: Este metodo calcula el total de divorcios en 2019 con separacion previa.
      */
-    public static void conSeparacionPrevia(File file) {
+    public static void conSeparacionPrevia(File file) {//le paso por parametro el fichero
         try {
             Scanner f = new Scanner(file);
             int contadorconSeparacionPrevia = 0;
             while (f.hasNextLine()) {
                 String linea = f.nextLine();
                 String[] tabla = linea.split(";");
-                if (tabla[2].equals("2019")) {
+                if (tabla[2].equals("2019")) {//si la columna de los años es 2019 entro
                     if (tabla[1].equalsIgnoreCase("si")) {
                         contadorconSeparacionPrevia++;
                     }
                 }
             }
-            System.out.println("Ha habido un total de " + contadorconSeparacionPrevia + " en 2019 ");
+            System.out.println("Ha habido un total de divorcios con separacion previa de: " + contadorconSeparacionPrevia +
+                                " en 2019 ");
         } catch (Exception ignored) {
 
         }
@@ -42,7 +43,7 @@ public class Ejercicio02 {
      * PRE:---
      * POST: Este metodo calcula El número total de divorcios SIN separación previa en el año 2018.
      */
-    public static void sinSeparacionPrevia(File file) {
+    public static void sinSeparacionPrevia(File file) {//le paso por parametro el fichero.
         try {
             Scanner f = new Scanner(file);
             int contadorSinSeparacionPrevia = 0;
@@ -56,19 +57,15 @@ public class Ejercicio02 {
                 }
             }
             System.out.println("Ha habido un total de divorcios sin separacion previa de: " + contadorSinSeparacionPrevia
-                                + " en 2018 ");
+                    + " en 2018 ");
         } catch (Exception ignored) {
 
         }
     }
 
-    public static void sumaDivorcios(File file){
-
-    }
-
     public static void main(String[] args) {
         File file;
-        file = new File("C:\\Users\\PABLO\\OneDrive\\Escritorio\\Divorcios.csv");
+        file = new File("C:\\Users\\PABLO\\OneDrive\\Escritorio\\Divorcios.csv");//ruta del fichero.
         conSeparacionPrevia(file);
         sinSeparacionPrevia(file);
     }

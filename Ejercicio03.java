@@ -8,6 +8,6 @@ package examen3Eva;
  */
 public class Ejercicio03 {
     public static void main(String[] args) {
-
+        //No lo he sabido hacer solo he creado la simpleLinkedList y los nodos.
     }
 }
